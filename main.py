@@ -37,7 +37,7 @@ def userInput(n):
     except Exception as e:
 
         return {
-            "memes": 400,
+            "code": 400,
             "message": str(type(e)) + str(e),
             "help": "Subreddit Doesn't Exist, Check if u spelled it correctly.."
         }
