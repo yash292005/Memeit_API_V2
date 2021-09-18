@@ -19,7 +19,7 @@ def userInput(n):
             meme = submissions.url
             title = submissions.title
             extension = meme[len(meme) - 3:].lower()
-            if "jpg" in extension or "png" in extension or "gif" in extension:
+            if "jpg" in extension or "png" in extension or "gif" in extension or "mp4" in extension:
                 result = {
                     "subreddit": n,
                     "title": title,
