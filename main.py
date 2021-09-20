@@ -1,7 +1,11 @@
 import os
 import praw
 from flask import Flask, jsonify
-
+"""
+This API has been created by yash vardhan, to use in "project-memeit".
+This API is private and not meant to be use publicly in any other project.
+Illegal copying of this code is an offence and punishable under the law.
+"""
 
 app = Flask(__name__)
 reddit = praw.Reddit(client_id='2roma39k4b7nKeLdK4vtTQ',
@@ -19,14 +23,25 @@ def userInput(n):
             meme = submissions.url
             title = submissions.title
             extension = meme[len(meme) - 3:].lower()
-            if "jpg" in extension or "png" in extension or "gif" in extension or "mp4" in extension:
+            vid_extension = meme[:9]
+            if "jpg" in extension or "png" in extension or "gif" in extension:
                 result = {
+                    "audio_url": meme + "/DASH_audio.mp4",
                     "subreddit": n,
                     "title": title,
-                    "url": meme
+                    "url": meme,
                 }
                 MainArray.append(result)
+            elif "https://v" in vid_extension:
+                result = {
+                    "audio_url": meme + "/DASH_audio.mp4",
+                    "subreddit": n,
+                    "title": title,
+                    "url": meme + "/DASH_360.mp4"
 
+                }
+
+                MainArray.append(result)
         finalResult = {
             "code": 200,
             "count": 50,
