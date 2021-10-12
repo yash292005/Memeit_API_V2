@@ -1,9 +1,4 @@
-"""
-This API has been created by yash vardhan, to use in "project-memeit".
-This API is private and not meant to be use publicly in any other project.
-Illegal copying of this code is an offence and punishable under the law.
 
-"""
 import os
 import random
 import praw
@@ -34,6 +29,7 @@ def userInput(n):
                     "title": title,
                     "url": meme
                 }
+                
                 MainArray.append(result)
         finalResult = {
             "code": 200,
@@ -42,6 +38,7 @@ def userInput(n):
         }
 
         return jsonify(finalResult)
+      
     except Exception as e:
         print(e)
         randomArray = ["AdviceAnimals",
@@ -67,6 +64,7 @@ def userInput(n):
                     "url": meme
                 }
                 MainArray.append(result)
+                
         finalResult = {
             "code": 200,
             "count": 50,
