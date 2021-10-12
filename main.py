@@ -7,11 +7,13 @@ import os
 import random
 import praw
 from flask import Flask, jsonify
+from dotenv import load_dotenv
 
+load_dotenv()
 app = Flask(__name__)
-reddit = praw.Reddit(client_id='2roma39k4b7nKeLdK4vtTQ',
-                     client_secret='wnNaoA1-kcefBJEgwJyLkEKQ0tdG3w', password='GajarKaHalwa1947',
-                     user_agent='PrawTut', username='MemeitOfficial')
+reddit = praw.Reddit(client_id=os.getenv("client_id"),
+                     client_secret=os.getenv("client_secret"), password=os.getenv("password"),
+                     user_agent=os.getenv("user_agent"), username=os.getenv("username"))
 
 
 @app.route('/<string:n>')
