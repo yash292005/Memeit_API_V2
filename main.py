@@ -2,7 +2,7 @@
 This API has been created by yash vardhan, to use in "project-memeit".
 This API is private and not meant to be use publicly in any other project.
 Illegal copying of this code is an offence and punishable under the law.
-happily created with love...
+
 """
 import os
 import random
